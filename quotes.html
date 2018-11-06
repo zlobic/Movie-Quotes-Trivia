@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>IMDB Quote Quiz</title>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+     <link href="https://fonts.googleapis.com/css?family=Oswald:400,600" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="./css/styles.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ </head>
+ <body>
+     <canvas id="canvas"></canvas>
+     <div id="logo">
+    <img src="./images/noun_Popcorn_34548.svg">
+    <h2 id="trivia">Movie Trivia Game</h2>
+    </div>
+    <div class="equalizer">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+     </div>
+    <div class="showContainer">
+        <div class="formContainer">
+          <div class="controlsContainer">
+             <i class="far fa-play-circle fa-3x"></i>            
+           </div>
+           <form class="quizForm">
+             <div class="form-control">
+             <input type="text" class="titleInput" required />
+             <span class="bar"></span>
+             <label for="First Name">MOVIE TITLE</label>
+             </div>
+             <div class="form-control">
+             <input type="text" class="directorInput" required />
+             <span class="bar"></span>
+             <label for="Last Name">DIRECTOR</label>
+             </div>  
+             <div class="form-control">
+             <input type="text" class="actorInput" required />
+             <span class="bar"></span>
+             <label for="Last Name">CHARACTER NAME</label>
+             </div> 
+            </form>
+            <button type="submit" id="submit">Next</button>
+         </div>
+     </div>
+     
+         <div id="myProgress">
+             <span class="score-label">TITLE SCORE</span><div class="myBar" id="myBarTitleScore"></div>
+             <span class="score-label">DIRECTOR SCORE</span><div class="myBar" id="myBarDirectorScore"></div>
+             <span class="score-label">ACTOR SCORE</span><div class="myBar" id="myBarActorScore"></div>
+         </div>
+ 
+     
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.1.0/gl-matrix.js"></script>
+    <script src="./js/starsBackground.js"></script>
+    <script src="./js/equalizer.js"></script>
+    <script src="./js/interaction.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+ </html>

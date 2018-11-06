@@ -1,0 +1,271 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  font-family: "Oswald", sans-serif;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orange {
+  color: #ff9d00;
+}
+
+canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.showContainer {
+  border-radius: 10px;
+  border: 3px solid rgba(0, 0, 0, 0.7);
+  background-color: rgba(117, 117, 117, 0.9);
+  height: 60%;
+  -webkit-box-shadow: 0px 0px 30px 4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 30px 4px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 30px 4px rgba(0,0,0,0.75);
+  position: absolute;
+  z-index: 1;}
+
+
+  i{margin-top: 50px;}
+
+
+
+.formContainer{
+  margin-top: 45px;
+}
+
+
+#logo{
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  width: 35%;
+}
+
+#logo > img{
+  width: 25%;
+}
+#trivia{
+  font-size: 1.7em;
+  font-weight: 600;
+  font-family: 'Oswald', sans-serif;
+  display: inline-block;
+  position: relative;
+  right: 30px;
+  margin: 0;
+}
+
+.controlsContainer{
+  width: 18%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.controlsContainer > .far{
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+#submit{
+  padding:9px 0px 9px 0px;
+  width: 30%;
+  display: block;
+  margin: 15px auto 0 auto;
+  background-color: black;
+  color:#e0e0e0;
+  font-family: 'Oswald', sans-serif;
+  border: 2px solid #e0e0e0;
+  border-radius: 7px;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  transition: transform ease 0.3s;
+  cursor: pointer;}
+
+#submit:hover{
+  position: relative;
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 18px -5px rgba(0,0,0,0.75);
+}
+
+#submit:focus{
+  outline: none;}
+
+
+.form-control {
+  position: relative;
+  margin-top: 60px;
+  width: 100%;
+  bottom: 35px;
+}
+
+input {
+  border: none;
+  border-bottom: 3px solid #010305;
+  padding: 15px 4px 11px 4px;
+  width: 250px;
+  display: block;
+  font-size: 18px;
+  background-color: transparent;
+  margin: 0 auto;
+  font-family: "Oswald", sans-serif;
+  color: #e0e0e0;
+  text-transform: uppercase;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+input:focus ~ label,
+.form-control input:valid ~ label {
+  top: -15px;
+  font-size: 18px;
+  left: 78px;
+  color: black;
+}
+
+
+
+input:focus ~ label,
+:after {  font-size: 17px; }
+
+label {
+  position: absolute;
+  top: 8px;
+  left: 75px;
+  font-size: 18px;
+  color: #e0e0e0;
+  transition: 0.3s ease all;
+  -webkit-transition: 0.3s ease all;
+}
+
+.bar {
+  position: relative;
+  width: 400px;
+  display: block;
+}
+
+.bar:before,
+.bar:after {
+  content: "";
+  height: 3px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 30%;
+}
+
+.bar:after {
+  right: 30%;
+}
+
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+input:valid ~ .bar:before,
+input:valid ~ .bar:after {
+  background: #e0e0e0;
+}
+
+input:invalid ~ .bar:before,
+input:invalid ~ .bar:after {
+  background: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myProgress{
+  position: absolute;
+  height: 23%;
+  width: 50%;
+  bottom: 0;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.myBar {
+  margin: 10px 0 15px 0;
+  width: 0%;
+  height: 30px;
+  background-color: #757575;
+  border: 2px solid black;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 26px; /* To center it vertically */
+  color: black; 
+}
+.score-label {
+  padding-top: 10px;
+}
+.labelDiv {
+  display: inline-block;
+}
+
+.equalizer {
+  width: 190px;
+  height: 190px;
+  margin-top: -20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 175px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.equalizer span {
+  background-color: #333;
+  width: 14px;
+  height: 0px;
+  bottom: 32px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  display: block;
+  position: absolute;
+  transition: height 0.2s linear;
+}
+.equalizer span:nth-child(1) {
+  margin-left: -40px;
+}
+.equalizer span:nth-child(2) {
+  margin-left: -20px;
+}
+.equalizer span:nth-child(4) {
+  margin-left: 20px;
+}
+.equalizer span:nth-child(5) {
+  margin-left: 40px;
+}
+.equalizer span:nth-child(6) {
+  margin-left: 40px;
+}
+.equalizer.paused {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.equalizer.paused span {
+  height: 14px !important;
+}

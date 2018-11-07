@@ -1,9 +1,11 @@
 var currentMovieIndex =  0;
- 
+
  $(document).ready(function(){
-   var game1 = new QuizGame(movies);
+  
+  
+  var game1 = new QuizGame(shuffle(movies));
  
-   
+  
  
    $( ".controlsContainer" ).append( $(
      `<div class="centered-container">

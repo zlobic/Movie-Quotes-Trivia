@@ -12,37 +12,46 @@ var currentMovieIndex =  0;
        </audio>        
      </div>
    `));
-   
 
-  $(".far").click(function(){    
+        
+  var barsRef;
+       
+  var farClickHandler = function(){ 
     if ($(this).hasClass("fa-play-circle")){
+      $(this).toggleClass("fa-play-circle");
+      $(this).toggleClass("fa-pause-circle");    
       let audio = document.getElementById("audio");    //JQuery not working here, only DOM as play() method is DOM
-      audio.play();                                   //Play audio excerpt on click          
-      $('.equalizer').equalizerAnimation(180, barsHeight);                      //Play audio excerpt on click
-      $("#audio").on('ended',function(){             //toggles pause button when done with playing
+      audio.play();
+      $(".equalizer").show()
+      barsRef =  $('.equalizer').equalizerAnimation(180, barsHeight);                             
+    }else if ($(this).hasClass("fa-pause-circle")){
+      $(".equalizer").hide()
+      clearInterval(barsRef)
+      audio.pause();  
         $(this).toggleClass("fa-pause-circle");   
-        $(this).toggleClass("fa-play-circle");
-        $('.equalizer').equalizerAnimation(0, [[0, 0],[0, 0],[0, 0],[0, 0],[0, 0]]);
-      }.bind(this));                             
-    }else {audio.pause();                     // if the button is toggled to pause, click gives pause of audio
-    $(this).toggleClass("fa-play-circle");     //toggle play/pause on click
-    $(this).toggleClass("fa-pause-circle");   //toggle play/pause on click
+        $(this).toggleClass("fa-play-circle"); 
+     }
     }
-    // if the button is toggled to pause, click gives pause of audio
-    $(this).toggleClass("fa-play-circle"); 
-       //toggle play/pause on click
-    $(this).toggleClass("fa-pause-circle");
-       //toggle play/pause on click
-  });
-  
-  
- 
+
+  $("#audio").on('ended',function(){    
+    $(".far").toggleClass("fa-pause-circle");   
+    $(".far").toggleClass("fa-play-circle");
+    $(".equalizer").hide()
+    clearInterval(barsRef)
+  })
+  $(".far").click(farClickHandler);
+
  
    $("#submit").click(function (){
-     if (currentMovieIndex == 4){
-       console.log("The game is over");
-     } 
-     else {
+    if (currentMovieIndex == 4 ){
+      game1.checkTitle(movies[currentMovieIndex].title);
+      game1.checkActors(movies[currentMovieIndex].actor);
+      game1.checkDirector(movies[currentMovieIndex].director);
+      game1.move('myBarTitleScore', game1.scoreTitles);
+      game1.move('myBarDirectorScore', game1.scoreDirectors);
+      game1.move('myBarActorScore', game1.scoreActors);
+
+      ;} else  {
        game1.checkTitle(movies[currentMovieIndex].title);
        game1.checkActors(movies[currentMovieIndex].actor);
        game1.checkDirector(movies[currentMovieIndex].director);
@@ -55,10 +64,11 @@ var currentMovieIndex =  0;
        }
        $("input[type=text]").val("")
        
-     game1.move('myBarTitleScore', game1.scoreTitles);
-     game1.move('myBarDirectorScore', game1.scoreDirectors);
-     game1.move('myBarActorScore', game1.scoreActors);
-     }
-   });
- });
+       game1.move('myBarTitleScore', game1.scoreTitles);
+       game1.move('myBarDirectorScore', game1.scoreDirectors);
+       game1.move('myBarActorScore', game1.scoreActors);}
+
+     })
+   }); 
+
  

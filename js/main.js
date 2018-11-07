@@ -51,13 +51,13 @@ QuizGame.prototype.move = function(input, scoreMax) {
     var elem = document.getElementById(input); 
     var width = 10;
     var id = setInterval(frame, 10);
-    function frame() {
-        if (width >= scoreMax) {
-            clearInterval(id);
-        } else {
-            width++; 
-            elem.style.width = width + '%'; 
-            elem.innerHTML = width * 1 + '%';
-        }
+     function frame() {
+         if (width >= scoreMax) {
+             clearInterval(id);
+         } else {
+             width++; 
+             elem.style.width = width + '%'; 
+             elem.innerHTML = width * 1 + '%';
+         }
     }
   }

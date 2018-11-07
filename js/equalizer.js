@@ -9,14 +9,16 @@ function randomBetween(range) {
 }
  $.prototype.equalizerAnimation = function(speed, barsHeight){
   var $equalizer = $(this);
-  setInterval(function(){
+  var ref = setInterval(function(){
+    
         $equalizer.find('span').each(function(i){
         $(this).css({ height:randomBetween(barsHeight[i])+'px' });
       });
   },speed);
-  $equalizer.on('click',function(){
-      $equalizer.toggleClass('paused');
-  });
+//   $equalizer.on('click',function(){
+//       $equalizer.toggleClass('paused');
+//   });
+  return ref
 }
  var barsHeight = [
 [20, 40],
@@ -25,3 +27,5 @@ function randomBetween(range) {
 [30, 80],
 [30, 60]
 ];
+
+//$('.equalizer').equalizerAnimation(180, [[20, 40],[30, 70],[40, 80],[30, 80],[30, 60]]);

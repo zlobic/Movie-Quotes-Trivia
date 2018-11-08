@@ -2,6 +2,11 @@ var currentMovieIndex =  0;
 
  $(document).ready(function(){
   
+
+  setTimeout(function() {
+    $('.showContainer').css('z-index', '5')
+    }, 15000);
+
   
   var game1 = new QuizGame(shuffle(movies));
  

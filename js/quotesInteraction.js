@@ -80,6 +80,17 @@ var currentMovieIndex =  0;
     }, 2000);
   }
 
+  function averageMili() { setTimeout(function(){
+      let averageScore = 0;
+      setInterval(function(){
+        if (averageScore < game1.scoreAverage){
+          averageScore++
+          $(".averageScore").text(averageScore.toString());
+        }
+      }, 35)
+    }, 4000);
+  }
+
   $("#submit").click(function (){
     $(".equalizer").hide()
     clearInterval(barsRef)
@@ -105,6 +116,9 @@ var currentMovieIndex =  0;
       ));
       $("#scoreBoard").animate({opacity: "1", top: "20.2%"}, 1500);
       scoresMili(); 
+      $(".labelAverageScore,.averageScore").hide().fadeIn(7000);
+      game1.scoreAverage = ((game1.scoreActors + game1.scoreDirectors + game1.scoreTitles) / 300) * 100;
+      averageMili();
     } 
     else  {
        checkEverything();

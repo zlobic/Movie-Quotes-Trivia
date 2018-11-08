@@ -27,4 +27,3 @@ function randomBetween(range) {
 [30, 60]
 ];
 
-//$('.equalizer').equalizerAnimation(180, [[20, 40],[30, 70],[40, 80],[30, 80],[30, 60]]);

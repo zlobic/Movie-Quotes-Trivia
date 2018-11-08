@@ -7,6 +7,7 @@ html {
   position: relative;
   font-family: "Oswald", sans-serif;
   display: inline-flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -29,7 +30,8 @@ canvas {
   box-shadow: 0px 0px 30px 4px rgba(0,0,0,0.75);
   position: absolute;
   z-index: 1;
-  top: 20%;}
+  top: 20%;
+  max-width: 80vw;}
 
 
 i{margin-top: 50px;}
@@ -47,11 +49,11 @@ i{margin-top: 50px;}
   left: 20px;
   display: flex;
   align-items: center;
-  width: 35%;
 }
 
 #logo > img{
-  width: 25%;
+  width: 150px;
+
 }
 #trivia{
   font-size: 1.7em;
@@ -99,6 +101,13 @@ i{margin-top: 50px;}
 #submit:focus{
   outline: none;}
 
+  #submit:active {
+    background: black;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+       -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+            box-shadow: inset 0px 0px 5px #c1c1c1;
+     outline: none;
+  }
 
 .form-control {
   position: relative;
@@ -110,8 +119,9 @@ i{margin-top: 50px;}
 input {
   border: none;
   border-bottom: 3px solid #010305;
-  padding: 15px 4px 11px 4px;
+  padding: 15px 4px 11px 6px;
   width: 250px;
+  max-width: 40vw;
   display: block;
   font-size: 19px;
   background-color: transparent;
@@ -128,9 +138,9 @@ input:focus {
 
 input:focus ~ label,
 .form-control input:valid ~ label {
-  top: -15px;
+  top: -18%;
   font-size: 18px;
-  left: 78px;
+  left: 20%;
   color: black;
 }
 
@@ -140,9 +150,11 @@ input:focus ~ label,
 :after {  font-size: 17px; }
 
 label {
+  max-width: 30vw;
+  width: 100%;
   position: absolute;
   top: 8px;
-  left: 75px;
+  left: 19%;
   font-size: 19px;
   color: #e0e0e0;
   transition: 0.3s ease all;
@@ -153,6 +165,7 @@ label {
   position: relative;
   width: 400px;
   display: block;
+  max-width: 60vw;
 }
 
 .bar:before,
@@ -197,10 +210,9 @@ input:invalid ~ .bar:after {
 #myProgress{
   position: absolute;
   height: 23%;
-  width: 20%;
-  top: 21%;
-  right: 17%;
-  margin: 0 auto;
+  width: 45%;
+  top: 0%;
+  right: -48%;
   z-index: 1;
 }
 
@@ -279,11 +291,14 @@ justify-content: center;
   right: 45px;
 }
 
-.labelAverageScore,.averageScore{
-  visibility: hidden;
+.labelAverageScore{
   color: white;
+  font-size: 1.5em;
 }
 
+.averageScore{
+  font-size: 1.05em;
+}
 
 
 .equalizer {
@@ -333,4 +348,9 @@ justify-content: center;
 }
 .equalizer.paused span {
   height: 14px !important;
+}
+
+
+@media only screen and (max-width: 1650px) {
+  .showContainer{height: 67%;}
 }

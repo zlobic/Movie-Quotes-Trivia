@@ -10,7 +10,7 @@ let QuizGame = function(moviesArray) {
     this.scoreTitles = 0
     this.scoreActors = 0
     this.scoreDirectors = 0
-
+    this.scoreAverage = 0
     this.refQuestionIndex = 0
 };
 
@@ -51,16 +51,17 @@ QuizGame.prototype.move = function(input, scoreMax) {
     var elem = document.getElementById(input); 
     var width = 10;
     var id = setInterval(frame, 10);
-     function frame() {
+    function frame() {
          if (width >= scoreMax) {
              clearInterval(id);
-         } else {
-             width++; 
-             elem.style.width = width + '%'; 
-             elem.innerHTML = width * 1 + '%';
+         } 
+         else {
+            width++; 
+            elem.style.width = width + '%'; 
+            elem.innerHTML = width * 1 + '%';
          }
     }
-  }
+}
 
 
 function shuffle(array){

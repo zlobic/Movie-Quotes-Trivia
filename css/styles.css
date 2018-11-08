@@ -11,9 +11,6 @@ html {
   align-items: center;
 }
 
-.orange {
-  color: #ff9d00;
-}
 
 canvas {
   position: relative;
@@ -32,11 +29,10 @@ canvas {
   box-shadow: 0px 0px 30px 4px rgba(0,0,0,0.75);
   position: absolute;
   z-index: 1;
-  top :90px;}
+  top: 20%;}
 
 
-  i{margin-top: 50px;}
-
+i{margin-top: 50px;}
 
 
 .formContainer{
@@ -47,7 +43,7 @@ canvas {
 #logo{
   position: absolute;
   z-index: 1;
-  top: 0;
+  top: 2%;
   left: 20px;
   display: flex;
   align-items: center;
@@ -82,16 +78,17 @@ canvas {
   padding:9px 0px 9px 0px;
   width: 30%;
   display: block;
-  margin: 15px auto 0 auto;
+  margin: 10px auto 0 auto;
   background-color: black;
   color:#e0e0e0;
   font-family: 'Oswald', sans-serif;
   border: 2px solid #e0e0e0;
   border-radius: 7px;
-  font-size: 1.1em;
+  font-size: 1.2em;
   text-transform: uppercase;
   transition: transform ease 0.3s;
-  cursor: pointer;}
+  cursor: pointer;
+  font-weight: 700;}
 
 #submit:hover{
   position: relative;
@@ -116,7 +113,7 @@ input {
   padding: 15px 4px 11px 4px;
   width: 250px;
   display: block;
-  font-size: 18px;
+  font-size: 19px;
   background-color: transparent;
   margin: 0 auto;
   font-family: "Oswald", sans-serif;
@@ -146,7 +143,7 @@ label {
   position: absolute;
   top: 8px;
   left: 75px;
-  font-size: 18px;
+  font-size: 19px;
   color: #e0e0e0;
   transition: 0.3s ease all;
   -webkit-transition: 0.3s ease all;
@@ -201,7 +198,8 @@ input:invalid ~ .bar:after {
   position: absolute;
   height: 23%;
   width: 20%;
-  bottom:40px;
+  top: 21%;
+  right: 17%;
   margin: 0 auto;
   z-index: 1;
 }
@@ -223,13 +221,78 @@ input:invalid ~ .bar:after {
   display: inline-block;
 }
 
+#scoreBoard{
+position: absolute;
+right: 39.5%;
+top: -60%;
+background-color: black;
+width: 403px;
+height: 60%;
+z-index: 2;
+border-radius: 10px;
+display: flex;
+flex-flow: column nowrap;
+align-items: space-around;
+justify-content: center;
+}
+
+#scoreTitle{
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  border-bottom: 3px solid white;
+  display: inline-block;
+  margin: 0 auto;
+  width: 25%;
+  position:relative;
+  bottom: 10px;
+  right: 5px;
+}
+
+.scoreContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em !important;
+  text-transform: uppercase;
+}
+
+
+.labelScore{
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: 100;
+  margin-right: 60px;
+}
+
+.scoresColumn1{
+  position: relative;
+  left: 30px;
+}
+.scoresColumn2{
+  font-size: 1.5em;
+  position: relative;
+  right: 45px;
+}
+
+.labelAverageScore,.averageScore{
+  visibility: hidden;
+  color: white;
+}
+
+
+
 .equalizer {
   width: 190px;
   height: 190px;
   margin-top: -20px;
   border-radius: 50%;
   position: absolute;
-  top: 80px;
+  top: 150px;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -237,7 +300,7 @@ input:invalid ~ .bar:after {
 }
 
 .equalizer span {
-  background-color: #333;
+  background-color: black;
   width: 14px;
   height: 0px;
   bottom: 32px;

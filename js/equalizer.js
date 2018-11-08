@@ -10,7 +10,6 @@ function randomBetween(range) {
  $.prototype.equalizerAnimation = function(speed, barsHeight){
   var $equalizer = $(this);
   var ref = setInterval(function(){
-    
         $equalizer.find('span').each(function(i){
         $(this).css({ height:randomBetween(barsHeight[i])+'px' });
       });

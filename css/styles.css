@@ -238,6 +238,7 @@ input:invalid ~ .bar:after {
 }
 .score-label {
   padding-top: 10px;
+  color: black;
 }
 .labelDiv {
   display: inline-block;
@@ -318,7 +319,7 @@ max-width: 80vw;
 .equalizer {
   width: 190px;
   height: 190px;
-  margin-top: -20px;
+  margin-top: -13px;
   border-radius: 50%;
   position: absolute;
   top: 150px;
@@ -379,6 +380,19 @@ max-width: 80vw;
   top: 104%;
   left: 0%;
   z-index: 1;
+}
+.myBar {
+    margin: 10px 0 15px 0;
+    width: 0%;
+    height: 30px;
+    background-color: black;
+    border: 3px solid #86171A;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 26px; /* To center it vertically */
+    color: #86171A; 
+}
+.score-label {
+  color: #86171A;
 }
 
 .showContainer{

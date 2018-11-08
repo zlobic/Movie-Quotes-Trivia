@@ -1,9 +1,13 @@
 var currentMovieIndex =  0;
+
+ $(document).ready(function(){
+  
+  
+  var game1 = new QuizGame(shuffle(movies));
  
-$(document).ready(function(){
-  var game1 = new QuizGame(movies);
+  
  
-  $( ".controlsContainer" ).append( $(
+   $( ".controlsContainer" ).append( $(
      `<div class="centered-container">
         <audio id="audio">
          <source src="${movies[currentMovieIndex].qouteFragment}" type="audio/mp3">     
